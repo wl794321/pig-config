@@ -1,0 +1,44 @@
+#加密配置
+jasypt:
+  encryptor:
+    password: lengleng
+
+spring:
+  redis:
+    #remote: false        #是否是cachecloud 获取
+    host: localhost
+    port: 6379
+  http:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+
+cache:
+  redis:
+    expiration: 3601
+
+ribbon:
+  Httpclient:
+    enable: false
+  OkHttp:
+    enable: true
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+  
+feign:
+  hystrix:
+    enabled: true
+  okhttp:
+    enable: true
+  httpclient:
+    enable: false
+    
+#监控短点配置
+management:
+  security:
+    enabled: false
+endpoints:
+  actuator:
+    enabled: true
+  shutdown:
+    enabled: false
